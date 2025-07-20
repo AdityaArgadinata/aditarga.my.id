@@ -6,7 +6,7 @@ export const PROJECTS_DATA: ProjectItemProps[] = [
     slug: 'personal-portfolio',
     description:
       'A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features include dark mode, blog functionality, project showcase, and contact form.',
-    image: '/images/projects/portfolio.png',
+    image: '/images/projects/placeholder.png',
     link_demo: 'https://aditarga.my.id',
     link_github: 'https://github.com/AdityaArgadinata/aditarga.my.id',
     stacks: '["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]',
