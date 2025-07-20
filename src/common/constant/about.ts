@@ -18,6 +18,6 @@ export const ABOUT = `
     I'm good at adapting to different situations, working efficiently, and always trying to do my best. My experience has taught me how to solve problems and lead teams, but I'm also happy to work with others to get things done. I'm excited about the chance to work together and make cool stuff!
 </p>
 <p>
-    I'm looking forward to the possibility of working with you!
+    I'm looking forward to the possibility of working with you !
 </p>
 `;
