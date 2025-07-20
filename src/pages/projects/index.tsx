@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async () => {
     // First sort by is_featured (featured projects first)
     if (a.is_featured && !b.is_featured) return -1;
     if (!a.is_featured && b.is_featured) return 1;
-    
+
     // Then sort by updated_at (newest first)
     return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
   });

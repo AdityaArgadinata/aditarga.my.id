@@ -21,7 +21,7 @@ export default async function handler(
       const blog = getBlogBySlug(slug as string);
       const staticViews = blog?.total_views_count || 0;
       const additionalViews = viewsStore[slug as string] || 0;
-      
+
       const response: ResponseData = {
         views: staticViews + additionalViews,
       };
@@ -35,12 +35,12 @@ export default async function handler(
       // Increment views in memory store
       const currentViews = viewsStore[slug as string] || 0;
       viewsStore[slug as string] = currentViews + 1;
-      
+
       const blog = getBlogBySlug(slug as string);
       const staticViews = blog?.total_views_count || 0;
-      
-      return res.json({ 
-        views: staticViews + viewsStore[slug as string] 
+
+      return res.json({
+        views: staticViews + viewsStore[slug as string],
       });
     } catch (error) {
       return res.status(500).json({ error: 'Failed to update views count' });

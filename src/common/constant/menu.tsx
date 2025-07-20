@@ -145,7 +145,9 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
 export const EXTERNAL_LINKS: MenuItemProps[] = [
   {
     title: 'Analytics',
-    href: process.env.NEXT_PUBLIC_UMAMI_SHARE_URL || 'https://analytics.eu.umami.is/share/your-share-id/aditarga.my.id',
+    href:
+      process.env.NEXT_PUBLIC_UMAMI_SHARE_URL ||
+      'https://analytics.eu.umami.is/share/your-share-id/aditarga.my.id',
     icon: <AnalyticsIcon size={iconSize} />,
     isShow: true,
     isExternal: true,

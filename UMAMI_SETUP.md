@@ -26,6 +26,7 @@ NEXT_PUBLIC_UMAMI_SHARE_URL=https://analytics.eu.umami.is/share/your-share-id/ad
 ## Features Tracked
 
 This project tracks the following events:
+
 - Page views (automatic)
 - Download Resume clicks
 - Theme toggles

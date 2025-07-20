@@ -9,16 +9,18 @@ export const BLOG_DATA: BlogItemProps[] = [
     status: 'publish',
     link: 'https://aditarga.my.id/blog/building-scalable-next-js-applications',
     title: {
-      rendered: 'Building Scalable Next.js Applications'
+      rendered: 'Building Scalable Next.js Applications',
     },
     content: {
-      rendered: '<p>Building scalable Next.js applications requires proper architecture and best practices.</p>',
-      markdown: '# Building Scalable Next.js Applications\n\nBuilding scalable Next.js applications requires proper architecture and best practices.',
-      protected: false
+      rendered:
+        '<p>Building scalable Next.js applications requires proper architecture and best practices.</p>',
+      markdown:
+        '# Building Scalable Next.js Applications\n\nBuilding scalable Next.js applications requires proper architecture and best practices.',
+      protected: false,
     },
     excerpt: {
       rendered: '<p>Learn how to build scalable Next.js applications.</p>',
-      protected: false
+      protected: false,
     },
     author: 1,
     featured_media: 1,
@@ -28,7 +30,7 @@ export const BLOG_DATA: BlogItemProps[] = [
     template: '',
     format: 'standard',
     meta: {
-      footnotes: ''
+      footnotes: '',
     },
     categories: [1],
     tags: [1, 2],
@@ -43,12 +45,12 @@ export const BLOG_DATA: BlogItemProps[] = [
         description: '',
         parent: 0,
         count: 3,
-        filter: 'raw'
-      }
+        filter: 'raw',
+      },
     ],
     amp_enabled: false,
     featured_image_url: '/images/placeholder.png',
-    total_views_count: 1250
+    total_views_count: 1250,
   },
   {
     id: 2,
@@ -58,16 +60,19 @@ export const BLOG_DATA: BlogItemProps[] = [
     status: 'publish',
     link: 'https://aditarga.my.id/blog/mastering-typescript-fundamentals',
     title: {
-      rendered: 'Mastering TypeScript: From Fundamentals to Advanced Patterns'
+      rendered: 'Mastering TypeScript: From Fundamentals to Advanced Patterns',
     },
     content: {
-      rendered: '<h2>Why TypeScript?</h2><p>TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.</p>',
-      markdown: '## Why TypeScript?\n\nTypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.',
-      protected: false
+      rendered:
+        '<h2>Why TypeScript?</h2><p>TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.</p>',
+      markdown:
+        '## Why TypeScript?\n\nTypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.',
+      protected: false,
     },
     excerpt: {
-      rendered: '<p>A comprehensive guide to TypeScript fundamentals and advanced patterns.</p>',
-      protected: false
+      rendered:
+        '<p>A comprehensive guide to TypeScript fundamentals and advanced patterns.</p>',
+      protected: false,
     },
     author: 1,
     featured_media: 2,
@@ -77,7 +82,7 @@ export const BLOG_DATA: BlogItemProps[] = [
     template: '',
     format: 'standard',
     meta: {
-      footnotes: ''
+      footnotes: '',
     },
     categories: [2],
     tags: [3, 4],
@@ -92,12 +97,12 @@ export const BLOG_DATA: BlogItemProps[] = [
         description: '',
         parent: 0,
         count: 5,
-        filter: 'raw'
-      }
+        filter: 'raw',
+      },
     ],
     amp_enabled: false,
     featured_image_url: '/images/placeholder.png',
-    total_views_count: 890
+    total_views_count: 890,
   },
   {
     id: 3,
@@ -107,16 +112,19 @@ export const BLOG_DATA: BlogItemProps[] = [
     status: 'publish',
     link: 'https://aditarga.my.id/blog/modern-css-techniques',
     title: {
-      rendered: 'Modern CSS Techniques: Grid, Flexbox, and Custom Properties'
+      rendered: 'Modern CSS Techniques: Grid, Flexbox, and Custom Properties',
     },
     content: {
-      rendered: '<h2>The Evolution of CSS</h2><p>CSS has evolved tremendously over the years. Modern CSS provides powerful tools like CSS Grid, Flexbox, and Custom Properties.</p>',
-      markdown: '## The Evolution of CSS\n\nCSS has evolved tremendously over the years. Modern CSS provides powerful tools like CSS Grid, Flexbox, and Custom Properties.',
-      protected: false
+      rendered:
+        '<h2>The Evolution of CSS</h2><p>CSS has evolved tremendously over the years. Modern CSS provides powerful tools like CSS Grid, Flexbox, and Custom Properties.</p>',
+      markdown:
+        '## The Evolution of CSS\n\nCSS has evolved tremendously over the years. Modern CSS provides powerful tools like CSS Grid, Flexbox, and Custom Properties.',
+      protected: false,
     },
     excerpt: {
-      rendered: '<p>Explore modern CSS techniques including CSS Grid, Flexbox, and Custom Properties.</p>',
-      protected: false
+      rendered:
+        '<p>Explore modern CSS techniques including CSS Grid, Flexbox, and Custom Properties.</p>',
+      protected: false,
     },
     author: 1,
     featured_media: 3,
@@ -126,7 +134,7 @@ export const BLOG_DATA: BlogItemProps[] = [
     template: '',
     format: 'standard',
     meta: {
-      footnotes: ''
+      footnotes: '',
     },
     categories: [3],
     tags: [5],
@@ -141,64 +149,63 @@ export const BLOG_DATA: BlogItemProps[] = [
         description: '',
         parent: 0,
         count: 4,
-        filter: 'raw'
-      }
+        filter: 'raw',
+      },
     ],
     amp_enabled: false,
     featured_image_url: '/images/placeholder.png',
-    total_views_count: 675
-  }
+    total_views_count: 675,
+  },
 ];
 
 export const getBlogById = (id: number): BlogItemProps | undefined => {
-  return BLOG_DATA.find(blog => blog.id === id);
+  return BLOG_DATA.find((blog) => blog.id === id);
 };
 
 export const getBlogBySlug = (slug: string): BlogItemProps | undefined => {
-  return BLOG_DATA.find(blog => blog.slug === slug);
+  return BLOG_DATA.find((blog) => blog.slug === slug);
 };
 
 export const getFeaturedBlogs = (limit = 3): BlogItemProps[] => {
-  return BLOG_DATA
-    .sort((a, b) => b.total_views_count - a.total_views_count)
-    .slice(0, limit);
+  return BLOG_DATA.sort(
+    (a, b) => b.total_views_count - a.total_views_count,
+  ).slice(0, limit);
 };
 
 export const searchBlogs = (query: string): BlogItemProps[] => {
   const searchTerm = query.toLowerCase();
-  return BLOG_DATA.filter(blog => 
-    blog.title.rendered.toLowerCase().includes(searchTerm) ||
-    blog.content.rendered.toLowerCase().includes(searchTerm) ||
-    blog.excerpt.rendered.toLowerCase().includes(searchTerm)
+  return BLOG_DATA.filter(
+    (blog) =>
+      blog.title.rendered.toLowerCase().includes(searchTerm) ||
+      blog.content.rendered.toLowerCase().includes(searchTerm) ||
+      blog.excerpt.rendered.toLowerCase().includes(searchTerm),
   );
 };
 
 export const getBlogsByCategory = (categoryId: number): BlogItemProps[] => {
-  return BLOG_DATA.filter(blog => 
-    blog.categories.includes(categoryId)
-  );
+  return BLOG_DATA.filter((blog) => blog.categories.includes(categoryId));
 };
 
 export const paginateBlogs = (
-  blogs: BlogItemProps[], 
-  page = 1, 
-  perPage = 10
-): { 
-  posts: BlogItemProps[], 
-  total_pages: number, 
-  total_posts: number, 
-  page: number, 
-  per_page: number 
+  blogs: BlogItemProps[],
+  page = 1,
+  perPage = 10,
+): {
+  posts: BlogItemProps[];
+  total_pages: number;
+  total_posts: number;
+  page: number;
+  per_page: number;
 } => {
   const startIndex = (page - 1) * perPage;
   const endIndex = startIndex + perPage;
   const paginatedBlogs = blogs.slice(startIndex, endIndex);
-  
+
   return {
     posts: paginatedBlogs,
     total_pages: Math.ceil(blogs.length / perPage),
     total_posts: blogs.length,
     page: page,
-    per_page: perPage
+    per_page: perPage,
   };
 };

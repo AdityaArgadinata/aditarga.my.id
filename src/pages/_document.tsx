@@ -7,8 +7,13 @@ export default function Document() {
         <script
           async
           defer
-          src={process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL || 'https://analytics.eu.umami.is/script.js'}
-          data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || 'your-website-id-here'}
+          src={
+            process.env.NEXT_PUBLIC_UMAMI_SCRIPT_URL ||
+            'https://analytics.eu.umami.is/script.js'
+          }
+          data-website-id={
+            process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || 'your-website-id-here'
+          }
         ></script>
         <link
           rel='apple-touch-icon'

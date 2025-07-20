@@ -129,7 +129,9 @@ const CommandPalette = () => {
 
   const handleFindGoogle = () => {
     const url =
-      'https://www.google.com/search?q=' + queryDebounce + '&ref=aditarga.my.id';
+      'https://www.google.com/search?q=' +
+      queryDebounce +
+      '&ref=aditarga.my.id';
     window.open(url, '_blank');
   };
 

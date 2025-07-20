@@ -15,16 +15,18 @@ export default async function handler(
 ) {
   try {
     // Filter only projects that should be shown
-    const visibleProjects = PROJECTS_DATA.filter(project => project.is_show);
-    
+    const visibleProjects = PROJECTS_DATA.filter((project) => project.is_show);
+
     // Sort projects: featured first, then by updated date
     const sortedProjects = visibleProjects.sort((a, b) => {
       // First sort by is_featured (featured projects first)
       if (a.is_featured && !b.is_featured) return -1;
       if (!a.is_featured && b.is_featured) return 1;
-      
+
       // Then sort by updated_at (newest first)
-      return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
+      return (
+        new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime()
+      );
     });
 
     res.status(200).json({ status: true, data: sortedProjects });

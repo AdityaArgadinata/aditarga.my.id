@@ -1,6 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { BLOG_DATA, getBlogsByCategory, paginateBlogs, searchBlogs } from '@/common/constant/blog';
+import {
+  BLOG_DATA,
+  getBlogsByCategory,
+  paginateBlogs,
+  searchBlogs,
+} from '@/common/constant/blog';
 import { BlogItemProps } from '@/common/types/blog';
 
 export default async function handler(
@@ -16,7 +21,7 @@ export default async function handler(
     const { page, per_page, categories, search } = req.query;
 
     // Get all blogs or filter by category
-    let filteredBlogs = categories 
+    let filteredBlogs = categories
       ? getBlogsByCategory(Number(categories))
       : BLOG_DATA;
 
@@ -26,15 +31,16 @@ export default async function handler(
     }
 
     // Sort blogs by date (newest first)
-    filteredBlogs.sort((a: BlogItemProps, b: BlogItemProps) => 
-      new Date(b.date).getTime() - new Date(a.date).getTime()
+    filteredBlogs.sort(
+      (a: BlogItemProps, b: BlogItemProps) =>
+        new Date(b.date).getTime() - new Date(a.date).getTime(),
     );
 
     // Paginate results
     const paginatedResult = paginateBlogs(
       filteredBlogs,
       Number(page) || 1,
-      Number(per_page) || 9
+      Number(per_page) || 9,
     );
 
     const responses = {

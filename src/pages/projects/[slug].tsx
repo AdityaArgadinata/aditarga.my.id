@@ -52,11 +52,11 @@ const ProjectsDetailPage: NextPage<ProjectsDetailPageProps> = ({ project }) => {
 export default ProjectsDetailPage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = PROJECTS_DATA
-    .filter(project => project.is_show)
-    .map((project) => ({
+  const paths = PROJECTS_DATA.filter((project) => project.is_show).map(
+    (project) => ({
       params: { slug: project.slug },
-    }));
+    }),
+  );
 
   return {
     paths,
@@ -66,7 +66,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params?.slug as string;
-  
+
   const project = PROJECTS_DATA.find((project) => project.slug === slug);
 
   if (!project || !project.is_show) {

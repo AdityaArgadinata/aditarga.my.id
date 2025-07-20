@@ -14,7 +14,7 @@ export default async function handler(
     // You can implement a static comments system or integrate with a service like Giscus
     const response = {
       status: 200,
-      data: [] // Empty comments array
+      data: [], // Empty comments array
     };
 
     res.status(200).json({ status: true, data: response.data });

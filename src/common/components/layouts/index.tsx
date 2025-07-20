@@ -26,8 +26,7 @@ const Layout = ({ children }: LayoutProps) => {
   const pageName = router.pathname.split('/')[1];
 
   const isFullPageHeader =
-    pageName === 'blog' ||
-    router.pathname.startsWith('/blog/');
+    pageName === 'blog' || router.pathname.startsWith('/blog/');
 
   const isShowChatButton = pageName !== 'guestbook';
 

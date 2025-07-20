@@ -4,7 +4,8 @@ export const PROJECTS_DATA: ProjectItemProps[] = [
   {
     title: 'Personal Portfolio Website',
     slug: 'personal-portfolio',
-    description: 'A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features include dark mode, blog functionality, project showcase, and contact form.',
+    description:
+      'A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features include dark mode, blog functionality, project showcase, and contact form.',
     image: '/images/projects/portfolio.png',
     link_demo: 'https://aditarga.my.id',
     link_github: 'https://github.com/AdityaArgadinata/aditarga.my.id',
@@ -33,7 +34,8 @@ The website is built using Next.js for server-side rendering and static generati
   {
     title: 'E-Commerce Platform',
     slug: 'ecommerce-platform',
-    description: 'A full-stack e-commerce solution with React frontend, Node.js backend, and PostgreSQL database. Includes payment integration and admin dashboard.',
+    description:
+      'A full-stack e-commerce solution with React frontend, Node.js backend, and PostgreSQL database. Includes payment integration and admin dashboard.',
     image: '/images/placeholder.png',
     link_demo: 'https://ecommerce-demo.com',
     link_github: 'https://github.com/username/ecommerce',
@@ -63,7 +65,8 @@ The platform follows a microservices architecture with separate frontend and bac
   {
     title: 'Task Management App',
     slug: 'task-management-app',
-    description: 'A collaborative task management application built with Vue.js and Firebase. Features real-time updates, team collaboration, and progress tracking.',
+    description:
+      'A collaborative task management application built with Vue.js and Firebase. Features real-time updates, team collaboration, and progress tracking.',
     image: '/images/placeholder.png',
     link_demo: 'https://taskapp-demo.com',
     link_github: 'https://github.com/username/taskapp',
@@ -93,7 +96,8 @@ Built with Vue.js for a reactive user interface and Firebase for real-time datab
   {
     title: 'Weather Forecast App',
     slug: 'weather-forecast-app',
-    description: 'A beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics.',
+    description:
+      'A beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics.',
     image: '/images/placeholder.png',
     link_demo: 'https://weather-demo.com',
     link_github: 'https://github.com/username/weather-app',
@@ -105,7 +109,8 @@ Built with Vue.js for a reactive user interface and Firebase for real-time datab
   {
     title: 'Blog Platform',
     slug: 'blog-platform',
-    description: 'A modern blogging platform with markdown support, comment system, and SEO optimization built with Next.js.',
+    description:
+      'A modern blogging platform with markdown support, comment system, and SEO optimization built with Next.js.',
     image: '/images/placeholder.png',
     link_demo: 'https://blog-demo.com',
     link_github: 'https://github.com/username/blog-platform',
@@ -117,7 +122,8 @@ Built with Vue.js for a reactive user interface and Firebase for real-time datab
   {
     title: 'Chat Application',
     slug: 'chat-application',
-    description: 'Real-time chat application with private messaging, group chats, and file sharing capabilities.',
+    description:
+      'Real-time chat application with private messaging, group chats, and file sharing capabilities.',
     image: '/images/placeholder.png',
     link_demo: 'https://chat-demo.com',
     link_github: 'https://github.com/username/chat-app',
