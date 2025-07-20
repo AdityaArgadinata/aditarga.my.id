@@ -24,7 +24,7 @@ try {
     firebase = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
   }
 } catch (error) {
-  console.warn('Firebase initialization failed:', error);
+  // Firebase initialization failed - will handle gracefully in components
   firebase = null;
 }
 
