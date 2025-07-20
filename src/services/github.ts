@@ -32,29 +32,63 @@ export const fetchGithubData = async (
   username: string,
   token: string | undefined,
 ) => {
-  const response = await axios.post(
-    GITHUB_USER_ENDPOINT,
-    {
-      query: GITHUB_USER_QUERY,
-      variables: {
-        username: username,
+  // If no token provided, return empty data instead of making API call
+  if (!token || token === 'undefined') {
+    return {
+      status: 200,
+      data: {
+        contributionsCollection: {
+          contributionCalendar: {
+            colors: [],
+            totalContributions: 0,
+            months: [],
+            weeks: [],
+          },
+        },
       },
-    },
-    {
-      headers: {
-        Authorization: `bearer ${token}`,
-      },
-    },
-  );
-
-  const status: number = response.status;
-  const responseJson = response.data;
-
-  if (status > 400) {
-    return { status, data: {} };
+    };
   }
 
-  return { status, data: responseJson.data.user };
+  try {
+    const response = await axios.post(
+      GITHUB_USER_ENDPOINT,
+      {
+        query: GITHUB_USER_QUERY,
+        variables: {
+          username: username,
+        },
+      },
+      {
+        headers: {
+          Authorization: `bearer ${token}`,
+        },
+      },
+    );
+
+    const status: number = response.status;
+    const responseJson = response.data;
+
+    if (status > 400) {
+      return { status, data: {} };
+    }
+
+    return { status, data: responseJson.data.user };
+  } catch (error) {
+    // Silent handling for production
+    return {
+      status: 500,
+      data: {
+        contributionsCollection: {
+          contributionCalendar: {
+            colors: [],
+            totalContributions: 0,
+            months: [],
+            weeks: [],
+          },
+        },
+      },
+    };
+  }
 };
 
 export const getGithubUser = async (type: string) => {

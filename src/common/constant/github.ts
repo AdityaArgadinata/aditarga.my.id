@@ -8,7 +8,7 @@ export const GITHUB_ACCOUNTS = [
   // },
   {
     username: 'AdityaArgadinata',
-    token: process.env.GITHUB_READ_USER_TOKEN_PERSONAL,
+    token: process.env.GITHUB_READ_USER_TOKEN_PERSONAL || undefined,
     endpoint: '/api/github?type=personal',
     type: 'personal',
     is_active: true,
