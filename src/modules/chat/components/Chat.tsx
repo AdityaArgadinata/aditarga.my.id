@@ -13,13 +13,15 @@ import ChatList from './ChatList';
 
 const Chat = ({ isWidget = false }: { isWidget?: boolean }) => {
   const { data: session } = useSession();
-
   const [messages, setMessages] = useState<MessageProps[]>([]);
-
-  const database = getDatabase(firebase);
-  const databaseChat = process.env.NEXT_PUBLIC_FIREBASE_CHAT_DB as string;
+  
+  // All hooks must be called at the top level
+  const database = firebase ? getDatabase(firebase) : null;
+  const databaseChat = process.env.NEXT_PUBLIC_FIREBASE_CHAT_DB || 'chat';
 
   const handleSendMessage = (message: string) => {
+    if (!firebase || !database) return;
+    
     const messageId = uuidv4();
     const messageRef = ref(database, `${databaseChat}/${messageId}`);
 
@@ -35,6 +37,8 @@ const Chat = ({ isWidget = false }: { isWidget?: boolean }) => {
   };
 
   const handleDeleteMessage = (id: string) => {
+    if (!firebase || !database) return;
+    
     const messageRef = ref(database, `${databaseChat}/${id}`);
 
     if (messageRef) {
@@ -43,8 +47,10 @@ const Chat = ({ isWidget = false }: { isWidget?: boolean }) => {
   };
 
   useEffect(() => {
+    if (!firebase || !database) return;
+    
     const messagesRef = ref(database, databaseChat);
-    onValue(messagesRef, (snapshot) => {
+    const unsubscribe = onValue(messagesRef, (snapshot) => {
       const messagesData = snapshot.val();
       if (messagesData) {
         const messagesArray = Object.values(messagesData) as MessageProps[];
@@ -56,7 +62,18 @@ const Chat = ({ isWidget = false }: { isWidget?: boolean }) => {
         setMessages(sortedMessage);
       }
     });
-  }, [database]);
+
+    return () => unsubscribe();
+  }, [database, databaseChat]);
+
+  // Check if Firebase is initialized after all hooks
+  if (!firebase) {
+    return (
+      <div className="text-center p-4">
+        <p>Chat feature is currently unavailable. Please check Firebase configuration.</p>
+      </div>
+    );
+  }
 
   return (
     <>
