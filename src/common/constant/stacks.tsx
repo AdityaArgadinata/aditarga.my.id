@@ -4,7 +4,6 @@ import {
   SiApollographql,
   SiCss3,
   SiExpress,
-  SiFirebase,
   SiGatsby,
   SiGraphql,
   SiJavascript,
@@ -55,7 +54,6 @@ export const STACKS: stacksProps = {
   'Material UI': <SiMui size={iconSize} className='text-sky-400' />,
   Vite: <SiVite size={iconSize} className='text-purple-500' />,
   Prisma: <SiPrisma size={iconSize} className='text-emerald-500' />,
-  Firebase: <SiFirebase size={iconSize} className='text-yellow-500' />,
   'Artificial Intelligence': (
     <BsRobot size={iconSize} className='text-rose-500' />
   ),

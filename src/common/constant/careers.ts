@@ -59,7 +59,7 @@ export const CAREERS: CareerProps[] = [
     responsibilities: [
       'Involved in building Sirka frontend web platform, primarily using Next.js.',
       'Developed wellwritten frontend code for new product features and maintained the code base by fixing defects.',
-      'Implemented web push notifications to handle incoming chat notifications.',
+      'Implemented web push notifications to handle incoming user notifications.',
       'Improved the loading performance of the Sirka landing page and blog by reducing the Largest Contentful Paint (LCP) timing from 4.1s to 1.7s.',
       'Successfully migrated the frontend landing page codebase from Laravel to Next.js, resulting in a reduction in errors caused by faulty dependency resolutions.',
       'Migrated the Sirka Blog codebase from Laravel to WordPress CMS.',

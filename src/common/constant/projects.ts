@@ -66,11 +66,11 @@ The platform follows a microservices architecture with separate frontend and bac
     title: 'Task Management App',
     slug: 'task-management-app',
     description:
-      'A collaborative task management application built with Vue.js and Firebase. Features real-time updates, team collaboration, and progress tracking.',
+      'A collaborative task management application built with Vue.js and modern backend. Features real-time updates, team collaboration, and progress tracking.',
     image: '/images/placeholder.png',
     link_demo: 'https://taskapp-demo.com',
     link_github: 'https://github.com/username/taskapp',
-    stacks: '["Vue.js", "Firebase", "Vuetify", "JavaScript"]',
+    stacks: '["Vue.js", "Node.js", "Vuetify", "JavaScript"]',
     content: `
 ## About the Project
 
@@ -87,7 +87,7 @@ A modern task management application designed to help teams collaborate effectiv
 
 ## Technology Stack
 
-Built with Vue.js for a reactive user interface and Firebase for real-time database functionality and authentication. Vuetify provides a beautiful Material Design component library.
+Built with Vue.js for a reactive user interface and Node.js backend for real-time functionality and authentication. Vuetify provides a beautiful Material Design component library.
     `,
     is_show: true,
     is_featured: false,
@@ -118,18 +118,5 @@ Built with Vue.js for a reactive user interface and Firebase for real-time datab
     is_show: true,
     is_featured: false,
     updated_at: new Date('2023-12-15'),
-  },
-  {
-    title: 'Chat Application',
-    slug: 'chat-application',
-    description:
-      'Real-time chat application with private messaging, group chats, and file sharing capabilities.',
-    image: '/images/placeholder.png',
-    link_demo: 'https://chat-demo.com',
-    link_github: 'https://github.com/username/chat-app',
-    stacks: '["React", "Socket.io", "Node.js", "MongoDB"]',
-    is_show: true,
-    is_featured: false,
-    updated_at: new Date('2023-11-20'),
   },
 ];

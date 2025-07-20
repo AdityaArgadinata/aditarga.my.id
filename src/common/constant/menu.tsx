@@ -14,7 +14,6 @@ import {
   FiRss as BlogIcon,
   FiUser as ProfileIcon,
 } from 'react-icons/fi';
-import { PiChatCircleDotsBold as ChatIcon } from 'react-icons/pi';
 
 import { MenuItemProps } from '../types/menu';
 
@@ -73,15 +72,6 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Contact',
-    type: 'Pages',
-  },
-  {
-    title: 'Guestbook',
-    href: '/guestbook',
-    icon: <ChatIcon size={iconSize} />,
-    isShow: true,
-    isExternal: false,
-    eventName: 'Pages: Chat',
     type: 'Pages',
   },
 ];

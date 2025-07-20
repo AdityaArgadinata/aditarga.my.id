@@ -22,7 +22,6 @@ import { MenuItemProps } from '@/common/types/menu';
 import AiLoading from '@/modules/cmdpallete/components/AiLoading';
 import AiResponses from '@/modules/cmdpallete/components/AiResponses';
 import QueryNotFound from '@/modules/cmdpallete/components/QueryNotFound';
-import { sendMessage } from '@/services/chatgpt';
 
 interface MenuOptionItemProps extends MenuItemProps {
   click?: () => void;
@@ -140,9 +139,8 @@ const CommandPalette = () => {
     setAskAssistantClicked(true);
     setAiLoading(true);
 
-    const response = await sendMessage(queryDebounce);
-
-    setAiResponse(response);
+    // AI chat feature has been removed
+    setAiResponse('AI assistant feature is currently unavailable.');
     setAiLoading(false);
   };
 

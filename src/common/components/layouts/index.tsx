@@ -4,7 +4,6 @@ import { useTheme } from 'next-themes';
 import { ReactNode } from 'react';
 
 import useHasMounted from '@/common/hooks/useHasMounted';
-import ChatButton from '@/modules/chat/components/ChatButton';
 
 import HeaderSidebar from './header/HeaderSidebar';
 import HeaderTop from './header/HeaderTop';
@@ -27,8 +26,6 @@ const Layout = ({ children }: LayoutProps) => {
 
   const isFullPageHeader =
     pageName === 'blog' || router.pathname.startsWith('/blog/');
-
-  const isShowChatButton = pageName !== 'guestbook';
 
   return (
     <>
@@ -53,7 +50,6 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         )}
       </div>
-      {isShowChatButton && <ChatButton />}
     </>
   );
 };
