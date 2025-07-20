@@ -1,3 +1,15 @@
 {
+  "repo": "AdityaArgadinata/aditarga.my.id",
+  "repoId": "R_kgDOJoIhfQ",
+  "category": "General",
+  "categoryId": "DIC_kwDOJoIhfc4CW6cJ",
+  "mapping": "pathname",
+  "strict": "0",
+  "reactionsEnabled": "1",
+  "emitMetadata": "1",
+  "inputPosition": "top",
+  "theme": "preferred_color_scheme",
+  "lang": "en",
+  "loading": "lazy",
   "defaultCommentOrder": "newest"
 }
