@@ -1,7 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { getBlogBySlug } from '@/common/constant/blog';
-
 interface ResponseData {
   views: number;
 }
@@ -17,18 +15,16 @@ export default async function handler(
 
   if (req.method === 'GET') {
     try {
-      // Get views from static data or in-memory store
-      const blog = getBlogBySlug(slug as string);
-      const staticViews = blog?.total_views_count || 0;
-      const additionalViews = viewsStore[slug as string] || 0;
+      // Get views from in-memory store
+      const views = viewsStore[slug as string] || 0;
 
       const response: ResponseData = {
-        views: staticViews + additionalViews,
+        views,
       };
 
       return res.json(response);
     } catch (error) {
-      return res.status(500).json({ error: 'Failed to fetch content meta' });
+      return res.status(500).json({ error: 'Failed to fetch views' });
     }
   } else if (req.method === 'POST') {
     try {
@@ -36,11 +32,8 @@ export default async function handler(
       const currentViews = viewsStore[slug as string] || 0;
       viewsStore[slug as string] = currentViews + 1;
 
-      const blog = getBlogBySlug(slug as string);
-      const staticViews = blog?.total_views_count || 0;
-
       return res.json({
-        views: staticViews + viewsStore[slug as string],
+        views: viewsStore[slug as string],
       });
     } catch (error) {
       return res.status(500).json({ error: 'Failed to update views count' });

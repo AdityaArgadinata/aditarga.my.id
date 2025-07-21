@@ -1,3 +1,3 @@
-import BlogListNew from './components/BlogListNew';
+import BlogListMDX from './components/BlogListMDX';
 
-export default BlogListNew;
+export default BlogListMDX;
