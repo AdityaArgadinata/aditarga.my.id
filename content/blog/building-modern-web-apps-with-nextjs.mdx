@@ -1,0 +1,168 @@
+---
+title: 'Building Modern Web Apps with Next.js'
+description: 'A comprehensive guide to building modern web applications using Next.js, TypeScript, and Tailwind CSS'
+date: '2025-07-20'
+published: true
+featured: false
+author: 'Aditya Argadinata'
+tags: ['nextjs', 'typescript', 'tailwindcss', 'web-development']
+image: '/images/blog/nextjs-guide.jpg'
+---
+
+# Building Modern Web Apps with Next.js
+
+Next.js has become the go-to framework for building modern React applications. In this post, we'll explore why Next.js is so powerful and how to get started.
+
+## Why Choose Next.js?
+
+Next.js provides several key benefits:
+
+### 🚀 **Performance**
+
+- Automatic code splitting
+- Built-in image optimization
+- Static site generation (SSG)
+- Server-side rendering (SSR)
+
+### 🛠️ **Developer Experience**
+
+- TypeScript support out of the box
+- Hot reloading
+- Built-in CSS support
+- API routes
+
+### 📱 **Production Ready**
+
+- Automatic bundle optimization
+- Built-in analytics
+- Edge functions support
+
+## Project Setup
+
+Let's start with a basic Next.js project:
+
+```bash
+npx create-next-app@latest my-app --typescript --tailwind --eslint
+cd my-app
+npm run dev
+```
+
+## TypeScript Integration
+
+Next.js has excellent TypeScript support. Here's a type-safe page component:
+
+```tsx
+import { GetStaticProps, NextPage } from 'next';
+import { BlogPost } from '@/types/blog';
+
+interface Props {
+  posts: BlogPost[];
+}
+
+const BlogPage: NextPage<Props> = ({ posts }) => {
+  return (
+    <div className='container mx-auto px-4'>
+      <h1 className='mb-8 text-4xl font-bold'>Blog Posts</h1>
+      {posts.map((post) => (
+        <article key={post.id} className='mb-8'>
+          <h2 className='text-2xl font-semibold'>{post.title}</h2>
+          <p className='text-gray-600'>{post.description}</p>
+        </article>
+      ))}
+    </div>
+  );
+};
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  // Fetch blog posts
+  const posts = await getBlogPosts();
+
+  return {
+    props: { posts },
+    revalidate: 60, // Revalidate every minute
+  };
+};
+
+export default BlogPage;
+```
+
+## Tailwind CSS Integration
+
+Tailwind CSS pairs perfectly with Next.js:
+
+<div className='my-6 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 p-6 text-white'>
+  <h3 className='mb-2 text-xl font-bold'>💡 Pro Tip</h3>
+  <p>Use Tailwind's utility classes for rapid UI development!</p>
+</div>
+
+```css
+/* tailwind.config.js */
+module.exports = {
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: '#3b82f6',
+        secondary: '#8b5cf6',
+      },
+    },
+  },
+  plugins: [],
+};
+```
+
+## Performance Optimization
+
+Next.js provides several performance optimization features:
+
+### Image Optimization
+
+```tsx
+import Image from 'next/image';
+
+const OptimizedImage = () => (
+  <Image
+    src='/hero-image.jpg'
+    alt='Hero'
+    width={800}
+    height={400}
+    priority
+    placeholder='blur'
+    blurDataURL='data:image/jpeg;base64,...'
+  />
+);
+```
+
+### Dynamic Imports
+
+```tsx
+import dynamic from 'next/dynamic';
+
+const DynamicComponent = dynamic(() => import('@/components/HeavyComponent'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false,
+});
+```
+
+## Deployment
+
+Deploy your Next.js app to Vercel with zero configuration:
+
+```bash
+npm i -g vercel
+vercel
+```
+
+## Conclusion
+
+Next.js provides an excellent foundation for modern web applications with:
+
+- **Performance** optimization out of the box
+- **Developer experience** that scales with your team
+- **Production-ready** features for any application size
+
+Start building your next project with Next.js today! 🚀

@@ -92,7 +92,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
 
   {
     title: 'Linkedin',
-    href: 'https://www.linkedin.com/in/aditya-argadinata/',
+    href: 'https://www.linkedin.com/in/aditya-argadinata-2b4647295/',
     icon: <LinkedinIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
@@ -102,7 +102,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
   },
   {
     title: 'Twitter',
-    href: 'https://twitter.com/adityaargadinata',
+    href: 'https://x.com/DesignSantai',
     icon: <TwitterIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
@@ -112,7 +112,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
   },
   {
     title: 'Instagram',
-    href: 'https://instagram.com/adityaargadinata',
+    href: 'https://www.instagram.com/aditya_argadinata',
     icon: <InstagramIcon size={iconSize} />,
     isShow: true,
     isExternal: true,

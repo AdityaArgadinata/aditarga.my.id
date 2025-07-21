@@ -17,8 +17,10 @@ interface ProfileProps {
 
 const Profile = ({ isScrolled = false }: ProfileProps) => {
   const isMobile = useIsMobile();
+  const [mounted, setMounted] = useState(false);
 
   const getImageSize = () => {
+    if (!mounted) return 80; // Default size for SSR
     let size = isMobile ? 40 : 80;
     if (!isMobile && isScrolled) {
       size = 0;
@@ -31,6 +33,10 @@ const Profile = ({ isScrolled = false }: ProfileProps) => {
   const hideNavbar = () => {
     setExpandMenu(false);
   };
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (expandMenu) {

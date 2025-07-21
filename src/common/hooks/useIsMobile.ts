@@ -3,13 +3,16 @@ import { useWindowSize } from 'usehooks-ts';
 
 const useIsMobile = () => {
   const { width } = useWindowSize();
-  const [isMobile, setIsMobile] = useState(width < 769);
+  const [isMobile, setIsMobile] = useState(false); // Default to false for SSR
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     setIsMobile(width < 821);
   }, [width]);
 
-  return isMobile;
+  // Return false until mounted to prevent hydration mismatch
+  return mounted ? isMobile : false;
 };
 
 export default useIsMobile;

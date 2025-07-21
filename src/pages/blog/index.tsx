@@ -1,20 +1,35 @@
-import { NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 
 import Container from '@/common/components/elements/Container';
-import BlogListNew from '@/modules/blog';
+import { BlogPostMeta, getAllBlogsMeta } from '@/lib/mdx';
+import BlogListMDX from '@/modules/blog/components/BlogListMDX';
 
 const PAGE_TITLE = 'Blog';
 
-const BlogPage: NextPage = () => {
+interface BlogPageProps {
+  posts: BlogPostMeta[];
+}
+
+const BlogPage: NextPage<BlogPageProps> = ({ posts }) => {
   return (
     <>
       <NextSeo title={`${PAGE_TITLE} - Aditya Argadinata`} />
       <Container className='xl:!-mt-5' data-aos='fade-up'>
-        <BlogListNew />
+        <BlogListMDX posts={posts} />
       </Container>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps<BlogPageProps> = async () => {
+  const posts = getAllBlogsMeta();
+
+  return {
+    props: {
+      posts,
+    },
+  };
 };
 
 export default BlogPage;

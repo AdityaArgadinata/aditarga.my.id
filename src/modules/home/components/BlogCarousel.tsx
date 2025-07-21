@@ -1,51 +1,37 @@
 import { motion } from 'framer-motion';
-import { useMemo, useRef } from 'react';
+import { useRef } from 'react';
 import { useDraggable } from 'react-use-draggable-scroll';
-import useSWR from 'swr';
 
-import BlogCardNewSkeleton from '@/common/components/skeleton/BlogCardNewSkeleton';
-import { BlogItemProps } from '@/common/types/blog';
-import BlogCardNew from '@/modules/blog/components/BlogCardNew';
-import { fetcher } from '@/services/fetcher';
+import { BlogPostMeta } from '@/lib/mdx';
+import BlogCardMDX from '@/modules/blog/components/BlogCardMDX';
 
-const BlogCarousel = () => {
-  const { data, isLoading } = useSWR(`/api/blog?page=1&per_page=4`, fetcher, {
-    revalidateOnFocus: false,
-    refreshInterval: 0,
-  });
+interface BlogCarouselProps {
+  posts: BlogPostMeta[];
+}
 
-  const blogData: BlogItemProps[] = useMemo(() => {
-    return data?.data?.posts || [];
-  }, [data]);
-
+const BlogCarousel = ({ posts }: BlogCarouselProps) => {
   const ref =
     useRef<HTMLDivElement>() as React.MutableRefObject<HTMLInputElement>;
   const { events } = useDraggable(ref);
 
   const renderBlogCards = () => {
-    if (isLoading) {
-      return Array.from({ length: 3 }, (_, index) => (
-        <BlogCardNewSkeleton key={index} />
-      ));
-    }
-
-    return blogData.map((item, index) => (
+    return posts.slice(0, 4).map((post, index) => (
       <motion.div
-        key={index}
+        key={post.slug}
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -100 }}
-        transition={{ duration: 0.5 }}
-        className='min-w-[326px] gap-x-5'
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        className='h-[450px] min-w-[280px] max-w-[320px] flex-shrink-0'
       >
-        <BlogCardNew {...item} />
+        <BlogCardMDX post={post} />
       </motion.div>
     ));
   };
 
   return (
     <div
-      className='flex gap-4 overflow-x-scroll p-1 scrollbar-hide'
+      className='flex items-stretch gap-4 overflow-y-hidden overflow-x-scroll p-1 scrollbar-hide'
       {...events}
       ref={ref}
     >
