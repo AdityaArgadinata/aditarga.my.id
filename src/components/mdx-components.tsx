@@ -2,31 +2,33 @@ import { MDXComponents } from 'mdx/types';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import TradingViewChart from '@/common/components/elements/TradingViewChart';
+
 // Custom components for MDX
 const mdxComponents: MDXComponents = {
   // Override default HTML elements
   h1: ({ children }) => (
-    <h1 className='mb-6 mt-8 text-4xl font-bold text-gray-900 dark:text-white'>
+    <h1 className='mb-6 mt-8 text-2xl font-bold text-gray-900 dark:text-white md:text-4xl'>
       {children}
     </h1>
   ),
   h2: ({ children }) => (
-    <h2 className='mb-4 mt-6 text-3xl font-semibold text-gray-900 dark:text-white'>
+    <h2 className='mb-4 mt-6 text-xl font-semibold text-gray-900 dark:text-white md:text-3xl'>
       {children}
     </h2>
   ),
   h3: ({ children }) => (
-    <h3 className='mb-3 mt-4 text-2xl font-semibold text-gray-900 dark:text-white'>
+    <h3 className='mb-3 mt-4 text-lg font-semibold text-gray-900 dark:text-white md:text-2xl'>
       {children}
     </h3>
   ),
   h4: ({ children }) => (
-    <h4 className='mb-2 mt-3 text-xl font-medium text-gray-900 dark:text-white'>
+    <h4 className='mb-2 mt-3 text-base font-medium text-gray-900 dark:text-white md:text-xl'>
       {children}
     </h4>
   ),
   p: ({ children }) => (
-    <p className='mb-4 leading-relaxed text-gray-700 dark:text-gray-300'>
+    <p className='mb-4 text-base leading-relaxed text-gray-700 dark:text-gray-300 md:text-lg'>
       {children}
     </p>
   ),
@@ -39,18 +41,18 @@ const mdxComponents: MDXComponents = {
     </Link>
   ),
   ul: ({ children }) => (
-    <ul className='mb-4 list-inside list-disc space-y-1 text-gray-700 dark:text-gray-300'>
+    <ul className='mb-4 list-inside list-disc space-y-1 text-base text-gray-700 dark:text-gray-300 md:text-lg'>
       {children}
     </ul>
   ),
   ol: ({ children }) => (
-    <ol className='mb-4 list-inside list-decimal space-y-1 text-gray-700 dark:text-gray-300'>
+    <ol className='mb-4 list-inside list-decimal space-y-1 text-base text-gray-700 dark:text-gray-300 md:text-lg'>
       {children}
     </ol>
   ),
   li: ({ children }) => <li className='ml-4'>{children}</li>,
   blockquote: ({ children }) => (
-    <blockquote className='mb-4 rounded-r border-l-4 border-blue-500 bg-gray-50 py-2 pl-4 italic text-gray-700 dark:bg-gray-800 dark:text-gray-300'>
+    <blockquote className='mb-4 rounded-r border-l-4 border-blue-500 bg-gray-50 py-2 pl-4 text-base italic text-gray-700 dark:bg-gray-800 dark:text-gray-300 md:text-lg'>
       {children}
     </blockquote>
   ),
@@ -118,6 +120,9 @@ const mdxComponents: MDXComponents = {
       </div>
     );
   },
+
+  // Custom TradingView Chart component
+  TradingViewChart,
 };
 
 export default mdxComponents;

@@ -4,14 +4,15 @@ import { FiArrowLeftCircle as BackButtonIcon } from 'react-icons/fi';
 
 type BackButtonProps = {
   url?: string;
-};
+  href?: string;
+} & React.HTMLAttributes<HTMLDivElement>;
 
-const BackButton = ({ url }: BackButtonProps) => {
+const BackButton = ({ url, href, ...props }: BackButtonProps) => {
   const router = useRouter();
 
   const handleOnClick = () => {
-    if (url) {
-      window.location.href = url;
+    if (url || href) {
+      window.location.href = url || href || '';
     } else {
       router.back();
     }
@@ -31,14 +32,14 @@ const BackButton = ({ url }: BackButtonProps) => {
 
   return (
     <div className='w-fit'>
-      {url ? (
-        <Link href={url} passHref>
-          <div className={className}>
+      {url || href ? (
+        <Link href={href || url || ''} passHref>
+          <div className={className} {...props}>
             <BackButtonChildComponent />
           </div>
         </Link>
       ) : (
-        <div className={className} onClick={handleOnClick}>
+        <div className={className} onClick={handleOnClick} {...props}>
           <BackButtonChildComponent />
         </div>
       )}
