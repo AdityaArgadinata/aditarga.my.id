@@ -102,7 +102,7 @@ const NewsList = ({ posts }: NewsListProps) => {
   }, [page]);
 
   return (
-    <div className='space-y-12'>
+    <div className='-translate-y-16 space-y-12'>
       {/* Search Bar - Always visible at top */}
       <div className='mb-8'>
         <SearchBar
@@ -136,7 +136,7 @@ const NewsList = ({ posts }: NewsListProps) => {
                           BERITA TERUPDATE
                         </span>
                       </div>
-                      <h1 className='mb-4 text-3xl font-bold leading-tight lg:text-5xl lg:leading-tight'>
+                      <h1 className='mb-4 line-clamp-3 text-2xl font-bold leading-tight lg:text-5xl lg:leading-tight'>
                         {post.title}
                       </h1>
                       <p className='mb-6 text-lg text-neutral-300 lg:text-xl lg:leading-relaxed'>

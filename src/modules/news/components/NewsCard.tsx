@@ -44,7 +44,7 @@ const NewsCard = ({ post, isExcerpt = true }: NewsCardProps) => {
         <div className='flex h-full flex-col p-5'>
           <div className='flex-grow space-y-3'>
             <div className='space-y-3'>
-              <h3 className='line-clamp-2 text-lg font-medium text-neutral-700 group-hover:text-neutral-900 dark:text-neutral-300 dark:group-hover:text-neutral-100'>
+              <h3 className='line-clamp-2 text-lg font-bold text-neutral-700 group-hover:text-neutral-900 dark:text-neutral-300 dark:group-hover:text-neutral-100'>
                 {title}
               </h3>
 

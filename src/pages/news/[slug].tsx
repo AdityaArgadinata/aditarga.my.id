@@ -61,7 +61,7 @@ const NewsDetailPage: NextPage<NewsDetailPageProps> = ({ post }) => {
             <h1 className='text-3xl font-bold text-neutral-800 dark:text-neutral-100 lg:text-4xl'>
               {title}
             </h1>
-            <p className='text-lg text-neutral-600 dark:text-neutral-400'>
+            <p className='text-base italic text-neutral-600 dark:text-neutral-400'>
               {description}
             </p>
             {image && (
