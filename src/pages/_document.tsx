@@ -15,6 +15,11 @@ export default function Document() {
             process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || 'your-website-id-here'
           }
         ></script>
+        <script
+          async
+          src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2497301388450970'
+          crossOrigin='anonymous'
+        ></script>
         <link
           rel='apple-touch-icon'
           sizes='180x180'
