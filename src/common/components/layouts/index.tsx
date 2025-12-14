@@ -5,6 +5,7 @@ import { ReactNode } from 'react';
 
 import useHasMounted from '@/common/hooks/useHasMounted';
 
+import HeaderNews from './header/HeaderNews';
 import HeaderSidebar from './header/HeaderSidebar';
 import HeaderTop from './header/HeaderTop';
 
@@ -27,6 +28,9 @@ const Layout = ({ children }: LayoutProps) => {
   const isFullPageHeader =
     pageName === 'blog' || router.pathname.startsWith('/blog/');
 
+  const isNewsPage =
+    pageName === 'news' || router.pathname.startsWith('/news/');
+
   return (
     <>
       {/* <TopBar /> */}
@@ -39,6 +43,11 @@ const Layout = ({ children }: LayoutProps) => {
         {isFullPageHeader ? (
           <div className='flex flex-col xl:pb-8'>
             <HeaderTop />
+            <main className='transition-all duration-300'>{children}</main>
+          </div>
+        ) : isNewsPage ? (
+          <div className='flex flex-col xl:pb-8'>
+            <HeaderNews />
             <main className='transition-all duration-300'>{children}</main>
           </div>
         ) : (

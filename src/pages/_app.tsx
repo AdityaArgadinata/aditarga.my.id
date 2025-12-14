@@ -47,7 +47,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         `}
       </style>
       <DefaultSeo {...defaultSEOConfig} />
-      <ThemeProvider attribute='class' defaultTheme='dark'>
+      <ThemeProvider attribute='class' defaultTheme='light'>
         <CommandPaletteProvider>
           <Layout>
             <CommandPalette />

@@ -6,14 +6,14 @@ import { TbCalendarBolt as DateIcon } from 'react-icons/tb';
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
 import { formatDate } from '@/common/helpers';
-import { BlogPostMeta } from '@/lib/mdx';
+import { NewsPostMeta } from '@/lib/news';
 
-interface BlogCardMDXProps {
-  post: BlogPostMeta;
+interface NewsCardProps {
+  post: NewsPostMeta;
   isExcerpt?: boolean;
 }
 
-const BlogCardMDX = ({ post, isExcerpt = true }: BlogCardMDXProps) => {
+const NewsCard = ({ post, isExcerpt = true }: NewsCardProps) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -25,7 +25,10 @@ const BlogCardMDX = ({ post, isExcerpt = true }: BlogCardMDXProps) => {
   const defaultImage = '/images/placeholder.png';
 
   return (
-    <Link href={`/blog/${slug}`}>
+    <Link
+      href={`/news/${slug}`}
+      data-umami-event={`Click News Article: ${title}`}
+    >
       <Card className='group relative h-full cursor-pointer border border-neutral-200 bg-neutral-50 transition-all duration-300 dark:border-neutral-800 dark:bg-neutral-900 lg:hover:scale-[102%]'>
         <div className='relative'>
           <Image
@@ -92,4 +95,4 @@ const BlogCardMDX = ({ post, isExcerpt = true }: BlogCardMDXProps) => {
   );
 };
 
-export default BlogCardMDX;
+export default NewsCard;
