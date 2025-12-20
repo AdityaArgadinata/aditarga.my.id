@@ -47,10 +47,14 @@ const BlogDetailPage: NextPage<BlogDetailPageProps> = ({ blog }) => {
             : [],
           siteName: 'Aditya Argadinata',
         }}
+        twitter={{
+          cardType: 'summary_large_image',
+        }}
         additionalMetaTags={[
           { name: 'author', content: author },
           { name: 'keywords', content: tags.join(', ') },
           { name: 'article:reading_time', content: readingTime.toString() },
+          ...(image ? [{ name: 'twitter:image', content: image }] : []),
         ]}
       />{' '}
       <Container data-aos='fade-up'>
