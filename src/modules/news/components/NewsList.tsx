@@ -1,15 +1,12 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useDebounce } from 'usehooks-ts';
-
 import EmptyState from '@/common/components/elements/EmptyState';
 import Image from '@/common/components/elements/Image';
-import Pagination from '@/common/components/elements/Pagination';
 import SearchBar from '@/common/components/elements/SearchBar';
 import { formatDate } from '@/common/helpers';
 import { NewsPostMeta } from '@/lib/news';
-
 import NewsCard from './NewsCard';
 
 const defaultImage = '/images/placeholder.png';
@@ -29,10 +26,12 @@ interface WindowWithUmami extends Window {
 const POSTS_PER_PAGE = 6;
 
 const NewsList = ({ posts }: NewsListProps) => {
-  const [page, setPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
-
+  const [visiblePosts, setVisiblePosts] = useState<NewsPostMeta[]>([]);
+  const [hasMore, setHasMore] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
+  const loaderRef = useRef<HTMLDivElement>(null);
 
   /* ======================
    * DATA PREP
@@ -59,47 +58,73 @@ const NewsList = ({ posts }: NewsListProps) => {
       ? filteredPosts.slice(1)
       : filteredPosts;
 
-  const totalPages = Math.ceil(listPosts.length / POSTS_PER_PAGE);
-  const startIndex = (page - 1) * POSTS_PER_PAGE;
-  const paginatedPosts = listPosts.slice(
-    startIndex,
-    startIndex + POSTS_PER_PAGE,
-  );
-
   /* ======================
    * HANDLERS
    ====================== */
-  const handlePageChange = (p: number) => {
-    setPage(p);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
-    setPage(1);
   };
 
   const handleClearSearch = () => {
     setSearchTerm('');
-    setPage(1);
+  };
+
+  const loadMorePosts = () => {
+    if (isLoading || !hasMore) return;
+
+    setIsLoading(true);
+
+    // Simulasi delay loading (ganti dengan API call jika diperlukan)
+    setTimeout(() => {
+      const nextPosts = listPosts.slice(
+        visiblePosts.length,
+        visiblePosts.length + POSTS_PER_PAGE,
+      );
+
+      setVisiblePosts((prev) => [...prev, ...nextPosts]);
+      setHasMore(nextPosts.length === POSTS_PER_PAGE);
+      setIsLoading(false);
+    }, 500); // Delay 500ms untuk simulasi loading
   };
 
   /* ======================
-   * ANALYTICS
+   * EFFECTS
    ====================== */
+  // Reset visiblePosts saat search berubah
+  useEffect(() => {
+    setVisiblePosts(listPosts.slice(0, POSTS_PER_PAGE));
+    setHasMore(listPosts.length > POSTS_PER_PAGE);
+  }, [debouncedSearchTerm]);
+
+  // Setup IntersectionObserver untuk infinite scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && hasMore && !isLoading) {
+          loadMorePosts();
+        }
+      },
+      { threshold: 1.0 },
+    );
+
+    if (loaderRef.current) {
+      observer.observe(loaderRef.current);
+    }
+
+    return () => {
+      if (loaderRef.current) {
+        observer.unobserve(loaderRef.current);
+      }
+    };
+  }, [hasMore, isLoading]);
+
+  // Analytics untuk search (sama seperti sebelumnya)
   useEffect(() => {
     const w = window as WindowWithUmami;
     if (debouncedSearchTerm && w.umami) {
       w.umami.track('Search News', { query: debouncedSearchTerm });
     }
   }, [debouncedSearchTerm]);
-
-  useEffect(() => {
-    const w = window as WindowWithUmami;
-    if (page > 1 && w.umami) {
-      w.umami.track('Navigate News Page', { page });
-    }
-  }, [page]);
 
   /* ======================
    * RENDER
@@ -140,7 +165,6 @@ const NewsList = ({ posts }: NewsListProps) => {
                     <span>⏱️ {featuredPost.readingTime} menit baca</span>
                   </div>
                 </div>
-
                 {/* IMAGE OVERLAY */}
                 <div className='pointer-events-none absolute inset-0 opacity-25'>
                   <Image
@@ -151,7 +175,6 @@ const NewsList = ({ posts }: NewsListProps) => {
                     className='h-full w-full object-cover'
                   />
                 </div>
-
                 <div className='pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent' />
               </article>
             </Link>
@@ -160,21 +183,20 @@ const NewsList = ({ posts }: NewsListProps) => {
       )}
 
       {/* EMPTY */}
-      {paginatedPosts.length === 0 && debouncedSearchTerm && (
+      {listPosts.length === 0 && debouncedSearchTerm && (
         <EmptyState
           message={`Tidak ada berita untuk "${debouncedSearchTerm}"`}
         />
       )}
 
       {/* GRID */}
-      {paginatedPosts.length > 0 && (
+      {listPosts.length > 0 && (
         <section className='relative isolate'>
           <h3 className='mb-6 text-xl font-bold md:text-2xl'>
             {debouncedSearchTerm ? 'Hasil Pencarian' : 'Semua Berita'}
           </h3>
-
           <div className='grid gap-5 sm:grid-cols-2 lg:grid-cols-3'>
-            {paginatedPosts.map((post, i) => (
+            {visiblePosts.map((post, i) => (
               <motion.div
                 key={post.slug}
                 initial={{ opacity: 0, y: 12 }}
@@ -186,14 +208,15 @@ const NewsList = ({ posts }: NewsListProps) => {
             ))}
           </div>
 
-          {/* PAGINATION – MOBILE SAFE */}
-          {totalPages > 1 && (
-            <div className='relative isolate z-40 mt-14 flex justify-center'>
-              <Pagination
-                totalPages={totalPages}
-                currentPage={page}
-                onPageChange={handlePageChange}
-              />
+          {/* LOADER UNTUK INFINITE SCROLL */}
+          {hasMore && (
+            <div ref={loaderRef} className='h-10' /> // Elemen invisible untuk observer
+          )}
+
+          {/* LOADING INDICATOR */}
+          {isLoading && (
+            <div className='mt-8 flex justify-center'>
+              <div className='h-8 w-8 animate-spin rounded-full border-4 border-t-4 border-neutral-300 border-t-blue-500' />
             </div>
           )}
         </section>

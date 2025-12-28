@@ -5,7 +5,7 @@ import Container from '@/common/components/elements/Container';
 import { getAllNewsMeta, NewsPostMeta } from '@/lib/news';
 import NewsList from '@/modules/news/components/NewsList';
 
-const PAGE_TITLE = 'Berita Saham';
+const PAGE_TITLE = 'Stock Pulse';
 
 interface NewsPageProps {
   posts: NewsPostMeta[];
@@ -14,7 +14,9 @@ interface NewsPageProps {
 const NewsPage: NextPage<NewsPageProps> = ({ posts }) => {
   return (
     <>
-      <NextSeo title={`${PAGE_TITLE} - Aditya Argadinata`} />
+      <NextSeo
+        title={`${PAGE_TITLE} - Analisis saham independen berbasis data dan riset pasar modal Indonesia.`}
+      />
       <Container className='xl:!-mt-5' data-aos='fade-up'>
         <NewsList posts={posts} />
       </Container>

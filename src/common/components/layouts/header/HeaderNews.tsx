@@ -32,7 +32,7 @@ const HeaderNews = () => {
             className='transition-transform lg:hover:scale-105'
           />
           <Link href='/news' className='text-base font-semibold lg:text-xl'>
-            Berita Saham
+            Stock Pulse
           </Link>
         </div>
 

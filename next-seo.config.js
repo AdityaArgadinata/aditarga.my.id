@@ -4,12 +4,14 @@ const metaDescription =
   'Seasoned Software Engineer with a strong focus on Backend Development, passionate about building robust, scalable, and secure server-side applications.';
 
 const defaultSEOConfig = {
-  defaultTitle: 'Aditya Argadinata - Personal Website',
+  defaultTitle:
+    'Analisis saham independen berbasis data dan riset pasar modal Indonesia.',
   description: metaDescription,
   canonical: canonicalUrl,
   openGraph: {
     canonical: canonicalUrl,
-    title: 'Adityan Argadinata - Personal Website',
+    title:
+      'Analisis saham independen berbasis data dan riset pasar modal Indonesia.',
     description: metaDescription,
     type: 'website',
     images: [

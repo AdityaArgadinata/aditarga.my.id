@@ -10,6 +10,7 @@ import Container from '@/common/components/elements/Container';
 import Image from '@/common/components/elements/Image';
 import { formatDate } from '@/common/helpers';
 import { getNewsBySlug, getNewsSlugs, NewsPost } from '@/lib/news';
+import FooterNews from '@/common/components/layouts/partials/FooterNews';
 
 interface UmamiTracker {
   track: (event: string, data?: Record<string, unknown>) => void;
@@ -37,7 +38,7 @@ const NewsDetailPage: NextPage<NewsDetailPageProps> = ({ post }) => {
   return (
     <>
       <NextSeo
-        title={`${title} - Berita Saham`}
+        title={`${title} - Stock Pulse`}
         description={description}
         openGraph={{
           type: 'article',
@@ -51,12 +52,12 @@ const NewsDetailPage: NextPage<NewsDetailPageProps> = ({ post }) => {
         }}
       />
 
-      <Container className='!-mt-4' data-aos='fade-up'>
-        <BackButton
-          href='/news'
-          data-umami-event='Click Back from News Article'
-        />
-        <article className='prose prose-neutral dark:prose-invert max-w-none'>
+      <Container className='!mt-4' data-aos='fade-up'>
+        <article className='prose prose-neutral dark:prose-invert mx-auto max-w-4xl'>
+          <BackButton
+            href='/news'
+            data-umami-event='Click Back from News Article'
+          />
           <div className='mb-8 space-y-4'>
             <h1 className='text-3xl font-bold text-neutral-800 dark:text-neutral-100 lg:text-4xl'>
               {title}
@@ -102,6 +103,7 @@ const NewsDetailPage: NextPage<NewsDetailPageProps> = ({ post }) => {
           <div className='prose-headings:text-neutral-800 prose-headings:dark:text-neutral-100 prose-p:text-neutral-700 prose-p:dark:text-neutral-300 prose-strong:text-neutral-900 prose-strong:dark:text-neutral-100 prose-code:text-neutral-800 prose-code:dark:text-neutral-200 prose-pre:bg-neutral-100 prose-pre:dark:bg-neutral-900 prose-blockquote:border-neutral-300 prose-blockquote:dark:border-neutral-700 text-justify'>
             <MDXRemote {...content} components={MDXComponents} />
           </div>
+          <FooterNews />
         </article>
       </Container>
     </>
