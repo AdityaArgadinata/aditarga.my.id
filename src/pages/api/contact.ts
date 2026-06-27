@@ -21,7 +21,7 @@ export default async function handler(
     const response = await sendMessage(updatedFormData);
 
     res.status(200).json({ status: 200, message: response?.data?.message });
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: 'Something went wrong!' });
   }
 }

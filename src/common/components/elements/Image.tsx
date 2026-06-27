@@ -19,7 +19,6 @@ const Image = (props: ImageProps) => {
         src={src}
         alt={alt}
         loading='lazy'
-        quality={100}
         {...rest}
       />
     </div>

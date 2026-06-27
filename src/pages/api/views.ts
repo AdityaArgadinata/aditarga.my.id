@@ -23,7 +23,7 @@ export default async function handler(
       };
 
       return res.json(response);
-    } catch (error) {
+    } catch {
       return res.status(500).json({ error: 'Failed to fetch views' });
     }
   } else if (req.method === 'POST') {
@@ -35,7 +35,7 @@ export default async function handler(
       return res.json({
         views: viewsStore[slug as string],
       });
-    } catch (error) {
+    } catch {
       return res.status(500).json({ error: 'Failed to update views count' });
     }
   } else {

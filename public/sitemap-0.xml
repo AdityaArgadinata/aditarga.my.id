@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://aditarga.my.id</loc><lastmod>2026-06-27T15:50:59.446Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://aditarga.my.id/about</loc><lastmod>2026-06-27T15:50:59.450Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://aditarga.my.id/blog</loc><lastmod>2026-06-27T15:50:59.450Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://aditarga.my.id/contact</loc><lastmod>2026-06-27T15:50:59.450Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://aditarga.my.id/dashboard</loc><lastmod>2026-06-27T15:50:59.450Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://aditarga.my.id/projects</loc><lastmod>2026-06-27T15:50:59.450Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://aditarga.my.id/blog/ai-agents-from-chatbots-to-digital-coworkers</loc><lastmod>2026-06-27T15:50:59.450Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://aditarga.my.id/blog/ai-governance-for-product-and-engineering-teams</loc><lastmod>2026-06-27T15:50:59.450Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://aditarga.my.id/blog/multimodal-ai-is-changing-product-design</loc><lastmod>2026-06-27T15:50:59.450Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://aditarga.my.id/blog/rag-is-still-relevant-in-the-long-context-era</loc><lastmod>2026-06-27T15:50:59.450Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://aditarga.my.id/blog/small-language-models-and-on-device-ai</loc><lastmod>2026-06-27T15:50:59.450Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://aditarga.my.id/projects/ai-finance-tracker</loc><lastmod>2026-06-27T15:50:59.450Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://aditarga.my.id/projects/bursarakyat</loc><lastmod>2026-06-27T15:50:59.450Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://aditarga.my.id/projects/netflix-clone</loc><lastmod>2026-06-27T15:50:59.450Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://aditarga.my.id/projects/stock-market-tools</loc><lastmod>2026-06-27T15:50:59.450Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://aditarga.my.id/projects/yt-analytics</loc><lastmod>2026-06-27T15:50:59.450Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://aditarga.my.id</loc><lastmod>2026-06-27T19:18:40.635Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://aditarga.my.id/about</loc><lastmod>2026-06-27T19:18:40.636Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://aditarga.my.id/blog</loc><lastmod>2026-06-27T19:18:40.636Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://aditarga.my.id/contact</loc><lastmod>2026-06-27T19:18:40.636Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://aditarga.my.id/dashboard</loc><lastmod>2026-06-27T19:18:40.636Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://aditarga.my.id/projects</loc><lastmod>2026-06-27T19:18:40.636Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://aditarga.my.id/blog/ai-agents-from-chatbots-to-digital-coworkers</loc><lastmod>2026-06-27T19:18:40.636Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://aditarga.my.id/blog/ai-governance-for-product-and-engineering-teams</loc><lastmod>2026-06-27T19:18:40.636Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://aditarga.my.id/blog/multimodal-ai-is-changing-product-design</loc><lastmod>2026-06-27T19:18:40.636Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://aditarga.my.id/blog/rag-is-still-relevant-in-the-long-context-era</loc><lastmod>2026-06-27T19:18:40.636Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://aditarga.my.id/blog/small-language-models-and-on-device-ai</loc><lastmod>2026-06-27T19:18:40.636Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://aditarga.my.id/projects/ai-finance-tracker</loc><lastmod>2026-06-27T19:18:40.636Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://aditarga.my.id/projects/bursarakyat</loc><lastmod>2026-06-27T19:18:40.636Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://aditarga.my.id/projects/netflix-clone</loc><lastmod>2026-06-27T19:18:40.636Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://aditarga.my.id/projects/stock-market-tools</loc><lastmod>2026-06-27T19:18:40.636Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://aditarga.my.id/projects/yt-analytics</loc><lastmod>2026-06-27T19:18:40.636Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

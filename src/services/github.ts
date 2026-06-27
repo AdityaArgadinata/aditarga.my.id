@@ -73,7 +73,7 @@ export const fetchGithubData = async (
     }
 
     return { status, data: responseJson.data.user };
-  } catch (error) {
+  } catch {
     // Silent handling for production
     return {
       status: 500,

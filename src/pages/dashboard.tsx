@@ -44,7 +44,7 @@ export const getStaticProps: GetStaticProps = async () => {
       },
       revalidate: 1,
     };
-  } catch (error) {
+  } catch {
     // Silent handling for production build
 
     // Return empty fallback if GitHub API fails

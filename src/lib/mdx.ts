@@ -120,7 +120,7 @@ export const getBlogMeta = (slug: string): BlogPostMeta | null => {
       image: getString(data, 'image') || null,
       readingTime: calculateReadingTime(content),
     };
-  } catch (error) {
+  } catch {
     // Return null if blog post metadata not found
     return null;
   }
@@ -160,7 +160,7 @@ export const getBlogBySlug = async (slug: string): Promise<BlogPost | null> => {
       readingTime: calculateReadingTime(content),
       frontMatter: data,
     };
-  } catch (error) {
+  } catch {
     // Return null if blog post not found
     return null;
   }
