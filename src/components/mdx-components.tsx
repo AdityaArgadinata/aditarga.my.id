@@ -2,8 +2,6 @@ import { MDXComponents } from 'mdx/types';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import TradingViewChart from '@/common/components/elements/TradingViewChart';
-
 // Custom components for MDX
 const mdxComponents: MDXComponents = {
   // Override default HTML elements
@@ -120,9 +118,6 @@ const mdxComponents: MDXComponents = {
       </div>
     );
   },
-
-  // Custom TradingView Chart component
-  TradingViewChart,
 };
 
 export default mdxComponents;

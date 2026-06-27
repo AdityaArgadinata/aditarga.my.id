@@ -1,0 +1,84 @@
+---
+title: 'Small Language Models and the Future of On-Device AI'
+description: 'Not every AI problem needs a frontier model. Small Language Models make AI cheaper, faster, more private, and closer to the user.'
+date: '2026-06-25'
+author: 'Aditya Argadinata'
+tags: ['ai', 'slm', 'edge-ai', 'privacy']
+featured: false
+published: true
+image: '/images/blog/nextjs.jpg'
+---
+
+# Small Language Models and the Future of On-Device AI
+
+The AI conversation has been dominated by large models. Bigger models are often better at reasoning, coding, and general-purpose tasks. But product engineering is not always about using the largest model available.
+
+For many use cases, **Small Language Models** are more practical. They can be cheaper, faster, easier to deploy, and better suited for privacy-sensitive workflows.
+
+## Why Small Models Matter
+
+Small Language Models, or SLMs, are designed to run with fewer resources. With quantization and optimized runtimes, they can run on laptops, internal servers, and in some cases mobile or edge devices.
+
+The benefits are clear:
+
+- lower latency;
+- lower inference cost;
+- better privacy for local data;
+- simpler deployment for narrow tasks;
+- stronger offline or low-connectivity experiences.
+
+Tasks like intent classification, field extraction, autocomplete, document cleanup, and support triage often do not require the most powerful model.
+
+## They Do Not Replace Large Models
+
+SLMs are not a complete replacement for frontier models. Large models are still stronger for complex reasoning, long coding tasks, ambiguous instructions, and open-ended analysis.
+
+A more realistic architecture is **model routing**.
+
+An application can use:
+
+- small models for fast, simple tasks;
+- large models for complex reasoning;
+- embedding models for search;
+- vision models for images;
+- deterministic code for validation.
+
+This gives teams a better balance between quality, cost, and speed.
+
+## On-Device AI Changes Product Design
+
+On-device AI makes new experiences possible:
+
+- local note summarization;
+- private document search;
+- keyboard writing assistance;
+- image analysis without upload;
+- offline personal automation.
+
+For consumer products, privacy can become a feature. For enterprise products, local deployment can help with compliance and data control.
+
+## Engineering Challenges
+
+Running small models still requires careful engineering:
+
+- model size and memory usage;
+- output quality across devices;
+- fallback behavior when the model fails;
+- update strategy;
+- observability for local inference;
+- prompt sensitivity.
+
+An SLM should be treated as part of a system, not just as a model file.
+
+## How to Start
+
+Start with a narrow task that is easy to evaluate. Build a baseline, collect examples, measure failures, and only then add retrieval, fine-tuning, or routing to a larger model.
+
+Good AI is not always the biggest AI. Often, the best model is the one that is accurate enough, fast enough, and cheap enough to be used every day.
+
+## Further Reading
+
+- [Google Gemma models](https://ai.google.dev/gemma)
+- [Microsoft Phi models](https://azure.microsoft.com/en-us/products/phi)
+- [ONNX Runtime for generative AI](https://onnxruntime.ai/docs/genai/)
+

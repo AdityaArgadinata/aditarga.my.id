@@ -1,0 +1,81 @@
+---
+title: 'AI Agents: From Chatbots to Digital Coworkers'
+description: 'AI agents are changing how software is built: they do not just answer questions, they plan work, use tools, and help complete workflows end to end.'
+date: '2026-06-27'
+author: 'Aditya Argadinata'
+tags: ['ai', 'agents', 'automation', 'productivity']
+featured: true
+published: true
+image: '/images/blog/frontend.jpg'
+---
+
+# AI Agents: From Chatbots to Digital Coworkers
+
+For a long time, most AI products looked like chatbots: a user typed a question, and the model returned an answer. That pattern is still useful, but the center of gravity is moving toward **AI agents**.
+
+An AI agent is a system that can understand a goal, break it into steps, call tools, inspect the result, and continue the workflow with human oversight. The value is no longer only in generating text. The value appears when AI can work inside real systems.
+
+## What Makes an Agent Different?
+
+A chatbot is mostly reactive. An agent is more operational.
+
+It can:
+
+- interpret a larger goal;
+- create a plan;
+- choose relevant tools;
+- evaluate intermediate results;
+- ask for clarification when risk is high;
+- preserve context across multiple steps.
+
+For example, a chatbot can explain how to deploy a Next.js app. An agent can inspect the repository, run the build, identify the failing step, suggest a patch, and summarize the fix.
+
+## Why Agents Are Becoming Practical
+
+Three things are happening at the same time.
+
+First, reasoning models are improving. They are better at following long instructions, reading messy context, and correcting themselves after seeing tool output.
+
+Second, the tooling layer is becoming more mature. SDKs, tracing, permission controls, evaluations, and observability make agents easier to test and operate.
+
+Third, companies want AI use cases that create visible productivity gains. Agents fit workflows that are repetitive, context-heavy, and rule-driven.
+
+## A Common Agent Architecture
+
+A production agent is rarely just one prompt. It usually includes:
+
+- a reasoning model;
+- a tool registry for APIs, databases, files, or browsers;
+- scoped memory for relevant context;
+- a policy layer for risky actions;
+- evaluators for output quality;
+- human approval for sensitive steps.
+
+The more important the workflow, the stronger the guardrails should be.
+
+## Risks to Take Seriously
+
+Agents can call the wrong tool, misunderstand context, or become overconfident. That is why they should not receive unrestricted production access on day one.
+
+Start with read-only tools, sandboxed environments, and explicit approval for state-changing actions.
+
+The practical rule is simple: agents can be fast, but they must remain auditable.
+
+## How to Start
+
+Start with one narrow workflow:
+
+1. Pick a repetitive task.
+2. Limit the tools the agent can use.
+3. Log every step.
+4. Evaluate 20-50 real cases manually.
+5. Add approval for actions that change data.
+
+The best agent is not the one that looks the smartest in a demo. It is the one that behaves consistently when real users depend on it.
+
+## Further Reading
+
+- [Google Cloud: AI Agent Trends Report](https://cloud.google.com/transform/ai-agent-trends-report)
+- [MIT AI Agent Index](https://aiagentindex.mit.edu)
+- [Model Context Protocol](https://modelcontextprotocol.io)
+

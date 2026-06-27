@@ -12,7 +12,6 @@ import {
   FiPieChart as AnalyticsIcon,
   FiPocket as HomeIcon,
   FiRss as BlogIcon,
-  FiTrendingUp as NewsIcon,
   FiUser as ProfileIcon,
 } from 'react-icons/fi';
 
@@ -55,15 +54,6 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Blog',
-    type: 'Pages',
-  },
-  {
-    title: 'Berita',
-    href: '/news',
-    icon: <NewsIcon size={iconSize} />,
-    isShow: true,
-    isExternal: false,
-    eventName: 'Pages: News',
     type: 'Pages',
   },
   {

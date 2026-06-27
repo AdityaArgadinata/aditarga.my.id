@@ -1,0 +1,84 @@
+---
+title: 'Multimodal AI Is Changing Product Design'
+description: 'Modern AI no longer understands only text. Multimodal models can work with images, audio, video, and documents, opening new product workflows.'
+date: '2026-06-24'
+author: 'Aditya Argadinata'
+tags: ['ai', 'multimodal', 'product', 'ux']
+featured: false
+published: true
+image: '/images/blog/frontend.jpg'
+---
+
+# Multimodal AI Is Changing Product Design
+
+AI products are no longer limited to text boxes. Users do not always want to write a long prompt. Sometimes they want to upload a screenshot, send a photo, attach a document, speak naturally, or share a short video.
+
+That is why **multimodal AI** matters. It allows models to understand multiple input types and combine them into useful context.
+
+## From Chat Box to Context Box
+
+The classic AI interface is a chat box. It is simple, but it is not always the best input method.
+
+Multimodal AI enables workflows like:
+
+- uploading a screenshot of an error and asking for help;
+- extracting expenses from a receipt photo;
+- reviewing a UI design for accessibility;
+- asking questions about a PDF;
+- turning meeting audio into action items.
+
+The product question changes from "What should the user type?" to "What context can the user provide most naturally?"
+
+## What Developers Need to Think About
+
+Multimodal systems require more than sending raw files to a model.
+
+Different inputs need different pipelines:
+
+- images may need resizing and quality checks;
+- audio may need transcription;
+- PDFs may need layout-aware parsing;
+- videos may need frame sampling;
+- long documents may need chunking and retrieval.
+
+The model is important, but preprocessing often decides whether the experience feels reliable.
+
+## Strong Use Cases
+
+Multimodal AI works especially well when the problem is visual, document-heavy, or hard to describe in text.
+
+Examples include:
+
+- technical support from screenshots;
+- form processing in operations;
+- education assistants that read exercises;
+- design QA;
+- warehouse photo inspection;
+- developer tools that understand browser errors.
+
+The value is in reducing input friction.
+
+## Product Risks
+
+Richer input also means higher privacy risk. Photos and documents often contain sensitive information. A product should explain what is processed, where it is processed, how long it is stored, and how users can delete it.
+
+Multimodal outputs also need boundaries. Models can misread blurry images, miss small details, or sound too confident about uncertain visual context.
+
+## Design Principles
+
+Useful principles:
+
+1. Show a preview before processing.
+2. Let users remove uploaded files.
+3. Explain model limitations.
+4. Provide manual fallback for high-risk tasks.
+5. Keep source context visible.
+
+Multimodal AI can make products feel more natural, but the best experiences still come from clear design.
+
+## Further Reading
+
+- [OpenAI: Images and vision](https://platform.openai.com/docs/guides/images)
+- [Google AI: Gemini models](https://ai.google.dev/gemini-api/docs/models)
+- [Anthropic: Claude vision](https://docs.anthropic.com/en/docs/build-with-claude/vision)
+

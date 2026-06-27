@@ -1,0 +1,87 @@
+---
+title: 'RAG Is Still Relevant in the Long-Context Era'
+description: 'Long-context models are powerful, but Retrieval-Augmented Generation still matters for applications that need fresh, accurate, and auditable answers.'
+date: '2026-06-26'
+author: 'Aditya Argadinata'
+tags: ['ai', 'rag', 'llm', 'search']
+featured: true
+published: true
+image: '/images/blog/mdx.webp'
+---
+
+# RAG Is Still Relevant in the Long-Context Era
+
+Every time AI models get larger context windows, the same question comes back: do we still need **Retrieval-Augmented Generation**, or RAG?
+
+The short answer is yes. Long context helps, but it does not replace the need for accurate retrieval, source attribution, freshness, access control, and cost management.
+
+## What RAG Is For
+
+RAG is a pattern where an application retrieves relevant information first, then gives that context to the model before generating an answer.
+
+It is useful for:
+
+- documentation assistants;
+- internal knowledge search;
+- customer support copilots;
+- contract analysis;
+- technical report Q&A;
+- enterprise search over private data.
+
+The goal is not to make the model magically know everything. The goal is to ground the answer in the right source material.
+
+## Long Context Is Not the Same as Correct Context
+
+Putting more text into the prompt can help, but it creates new problems:
+
+- irrelevant context distracts the model;
+- token cost increases;
+- latency gets worse;
+- source attribution becomes harder;
+- permissions become harder to enforce;
+- updated documents still need to be selected correctly.
+
+RAG helps by choosing the most useful context before the model starts reasoning.
+
+## Modern RAG Is More Than Vector Search
+
+Early RAG systems were often simple embedding search. Modern RAG is more layered:
+
+- hybrid search combines semantic and keyword retrieval;
+- reranking improves the final context;
+- metadata filters enforce tenant, date, or category boundaries;
+- query rewriting improves vague user questions;
+- agentic retrieval can search multiple times when context is incomplete.
+
+In many production systems, retrieval quality matters more than model size.
+
+## Common Failure Modes
+
+RAG can fail when chunks are too large, too small, or separated from document structure. It can also retrieve the right source but still produce a weak answer.
+
+Useful evaluation metrics include:
+
+- recall: did we retrieve the right source?
+- precision: did we avoid noisy context?
+- faithfulness: did the answer stay grounded?
+- latency: is the workflow fast enough?
+- cost: can the system scale?
+
+## Practical Guidelines
+
+Keep these rules in mind:
+
+1. Show sources whenever possible.
+2. Refuse to answer when context is insufficient.
+3. Store the document version used in the answer.
+4. Evaluate with real user questions.
+5. Keep public and private retrieval pipelines separate.
+
+RAG is not just an implementation detail. It is one of the main ways to make AI systems more trustworthy.
+
+## Further Reading
+
+- [IBM: What is retrieval-augmented generation?](https://www.ibm.com/topics/retrieval-augmented-generation)
+- [Google Cloud: RAG overview](https://cloud.google.com/use-cases/retrieval-augmented-generation)
+- [MTRAG benchmark](https://github.com/ibm/mt-rag-benchmark)
+

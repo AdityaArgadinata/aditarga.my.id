@@ -1,21 +1,21 @@
 import Breakline from '@/common/components/elements/Breakline';
-import { BlogPostMeta } from '@/lib/mdx';
+import { ProjectItemProps } from '@/common/types/projects';
 
-import BlogPreview from './BlogPreview';
 import Introduction from './Introduction';
+import PersonalProjectPreview from './PersonalProjectPreview';
 import Services from './Services';
 import SkillsSection from './SkillsSection';
 
 interface HomeProps {
-  posts: BlogPostMeta[];
+  projects: ProjectItemProps[];
 }
 
-const Home = ({ posts }: HomeProps) => {
+const Home = ({ projects }: HomeProps) => {
   return (
     <>
       <Introduction />
       <Breakline className='mb-7 mt-8' />
-      <BlogPreview posts={posts} />
+      <PersonalProjectPreview projects={projects} />
       <Breakline className='my-8' />
       <SkillsSection />
       <Breakline className='my-8' />

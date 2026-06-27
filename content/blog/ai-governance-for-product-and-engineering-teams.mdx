@@ -1,0 +1,95 @@
+---
+title: 'AI Governance for Product and Engineering Teams'
+description: 'As AI enters critical workflows, teams need evaluation, audit trails, privacy controls, and guardrails from the beginning.'
+date: '2026-06-23'
+author: 'Aditya Argadinata'
+tags: ['ai', 'governance', 'security', 'engineering']
+featured: false
+published: true
+image: '/images/blog/mdx.webp'
+---
+
+# AI Governance for Product and Engineering Teams
+
+AI governance can sound like a legal or compliance topic. But for product and engineering teams, governance is a practical discipline: it helps AI features stay safe, reliable, and understandable.
+
+As AI moves into support, document analysis, coding, internal operations, and decision support, teams need a clear answer to one question: how do we know this system is working correctly?
+
+## Governance Is Not a Blocker
+
+Good governance does not slow innovation. It makes shipping safer.
+
+Without evaluations and guardrails, every prompt change, model upgrade, or retrieval tweak can become a production risk.
+
+The basic pieces are:
+
+- data policy;
+- model evaluation;
+- prompt and version control;
+- logging and audit trails;
+- access control;
+- human review for sensitive decisions;
+- incident response when AI fails.
+
+## Evaluation Should Start Early
+
+AI features should not be tested with only a few hand-picked prompts. Teams need a small but realistic evaluation set.
+
+Include:
+
+- normal user questions;
+- ambiguous questions;
+- incomplete inputs;
+- questions the AI should refuse;
+- ideal answers;
+- examples of unacceptable answers.
+
+Every model, prompt, or retrieval update should pass this evaluation before release.
+
+## Data Privacy
+
+Many AI risks start with data. Do not send sensitive data to a model without a clear reason. If private data must be processed, use access control, masking, retention policies, and clear user consent.
+
+For internal products, AI must follow the same permission model as the application. If a user cannot access a document directly, the AI should not reveal it indirectly.
+
+## Practical Guardrails
+
+Guardrails do not need to be complicated at the beginning.
+
+Start with:
+
+- clear system instructions;
+- allowlisted tools;
+- schema validation;
+- rate limits;
+- approval for important actions;
+- input and output logging;
+- human fallback.
+
+For agents, guardrails are even more important because the system can take actions, not just answer questions.
+
+## Audit Trails
+
+When AI produces a recommendation, teams should be able to answer:
+
+- which model was used?
+- which prompt version was used?
+- which documents were included?
+- which tools were called?
+- who approved the action?
+- what was the final output?
+
+Without audit trails, debugging AI systems becomes guesswork.
+
+## Final Thought
+
+AI governance is not a long document that sits untouched. It is an engineering habit: evaluate, observe, restrict, log, and roll back when needed.
+
+Mature AI products are not just impressive in demos. They remain trustworthy when real users rely on them every day.
+
+## Further Reading
+
+- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
+- [OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+- [ISO/IEC 42001 overview](https://www.iso.org/standard/81230.html)
+
